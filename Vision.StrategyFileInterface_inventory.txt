@@ -1,0 +1,351 @@
+=== help(strat) ===
+Help on IATIVisionStrategyFileInterface in module win32com.gen_py.42BAF99B-E15F-49DB-8840-8A06AABF0567x0x2x0.IATIVisionStrategyFileInterface object:
+
+class IATIVisionStrategyFileInterface(win32com.client.DispatchBaseClass)
+ |  IATIVisionStrategyFileInterface(oobj=None)
+ |
+ |  VISION Strategy File Interface
+ |
+ |  Method resolution order:
+ |      IATIVisionStrategyFileInterface
+ |      win32com.client.DispatchBaseClass
+ |      builtins.object
+ |
+ |  Methods defined here:
+ |
+ |  AddDataItemGroupsToAsapFile(self, szFileName=<PyOleEmpty object at 0x00000212284D5D40>, szOutputFile=<PyOleEmpty object at 0x00000212284D5D40>, szGroupName=<PyOleEmpty object at 0x00000212284D5D40>, bWriteFullNames=<PyOleEmpty object at 0x00000212284D5D40>, AppendUniqueID=True)
+ |      This function will copy an ASAP2 file to the new name and insert records into it for the definitions of the data items contained in the group passed in.
+ |
+ |  AddMemoryRegion(self, MemoryName=<PyOleEmpty object at 0x00000212284D5D40>, StartAddress=<PyOleEmpty object at 0x00000212284D5D40>, Size=<PyOleEmpty object at 0x00000212284D5D40>, Flags=<PyOleEmpty object at 0x00000212284D5D40>, ChecksumType=0)
+ |      Adds a memory region to the strategy
+ |
+ |  AddMemoryRegion2(self, MemoryName=<PyOleEmpty object at 0x00000212284D5D40>, StartAddress=<PyOleEmpty object at 0x00000212284D5D40>, Size=<PyOleEmpty object at 0x00000212284D5D40>, Flags=<PyOleEmpty object at 0x00000212284D5D40>, ChecksumType=0)
+ |      Adds a memory region to the strategy
+ |
+ |  AddModelBitmapToStrategyResource(self, szModelFileName=<PyOleEmpty object at 0x00000212284D5D40>, szBitmapFileName=<PyOleEmpty object at 0x00000212284D5D40>, GroupName=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Adds bitmap files as resource files to the strategy
+ |
+ |  CopyStrategyMemory(self, FromMemory=<PyOleEmpty object at 0x00000212284D5D40>, ToMemory=<PyOleEmpty object at 0x00000212284D5D40>, Size=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Copies the strategy memory to another buffer
+ |
+ |  DeleteResource(self, resourceName=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Delete resource of specified name
+ |
+ |  ExportASAP2DescriptionFile(self, filePathToExport=<PyOleEmpty object at 0x00000212284D5D40>, bWriteFullNames=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Export this strategy file to ASAP2 description file containing data item definitions and device settings
+ |
+ |  ExportAllMemory(self, FileName=<PyOleEmpty object at 0x00000212284D5D40>, ExportType=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      This method exports all memory in the strategy to a file of the given type
+ |
+ |  ExportCalibration(self, ExportFileName=<PyOleEmpty object at 0x00000212284D5D40>, FilterFileName='', ModificationSource='', ModificationFromDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), ModificationToDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0))
+ |      Exports a VISION calibration file (*.cal)
+ |
+ |  ExportCalibrationToCDF(self, ExportFileName=<PyOleEmpty object at 0x00000212284D5D40>, ExportChangedOnly=False, ExportFullDataItemNames=False, UseDisplayFormat=False, ExportFunctions=False, ExportUnits=False, CalFileCommentsOption=1, DataItemCommentsOption=1, FilterFileName='', ModificationSource='', ModificationFromDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), ModificationToDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), FilterMatchOption=1)
+ |      Exports an ASAM CDF calibration file (*.cdf; *.cdfx)
+ |
+ |  ExportCalibrationToDCM(self, ExportFileName=<PyOleEmpty object at 0x00000212284D5D40>, ExportChangedOnly=False, ExportFullDataItemNames=False, UseDisplayFormat=False, ExportDCM2Format=False, ExportComments=False, ExportFunctions=False, ExportUnits=False, FilterFileName='', ModificationSource='', ModificationFromDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), ModificationToDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), FilterMatchOption=1)
+ |      Exports a DCM calibration file (*.dcm)
+ |
+ |  ExportCalibrationToMatlab(self, ExportFileName=<PyOleEmpty object at 0x00000212284D5D40>, ExportChangedOnly=False, PrependDataItemName=True, GroupDataByType=True, FilterFileName='', ModificationSource='', ModificationFromDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), ModificationToDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0))
+ |      Exports a MATLAB calibration file (*.mat)
+ |
+ |  ExportCalibrationToVAT2000(self, ExportFileName=<PyOleEmpty object at 0x00000212284D5D40>, ExportChangedOnly=False, ExportFullDataItemNames=False, ExportSharedAxes=False, FilterFileName='', ModificationSource='', ModificationFromDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), ModificationToDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0))
+ |      Exports a VAT2000 calibration file (*.txt)
+ |
+ |  ExportCalibrationToVector(self, ExportFileName=<PyOleEmpty object at 0x00000212284D5D40>, ExportChangedOnly=False, ExportFullDataItemNames=False, ExportScalars=True, ExportStateVariables=True, Export2DTables=True, Export3DTables=True, Export1DArrays=True, Export2DArrays=True, Use2DTablesDescendingOrder=False, FilterFileName='')
+ |      Exports a Vector calibration file (*.vxf)
+ |
+ |  ExportCustomHFiles(self, szOutputFile=<PyOleEmpty object at 0x00000212284D5D40>, szHexOutputFileName=<PyOleEmpty object at 0x00000212284D5D40>, szGroupName=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Export the Honda files, DBO, MAO and HEX file
+ |
+ |  ExportFilterFile(self, FilterFileName=<PyOleEmpty object at 0x00000212284D5D40>, DataItemGroup=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Exports a calibration filter file
+ |
+ |  ExportMemory(self, Regions=<PyOleEmpty object at 0x00000212284D5D40>, FileName=<PyOleEmpty object at 0x00000212284D5D40>, ExportType=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Exports the memory regions
+ |
+ |  ExportResource(self, resourceName=<PyOleEmpty object at 0x00000212284D5D40>, filePathToExport=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Export resource of specified name to specified location
+ |
+ |  ExportToMatlabFile(self, FileName=<PyOleEmpty object at 0x00000212284D5D40>, ModifiedValuesOnly=<PyOleEmpty object at 0x00000212284D5D40>, PrependDataName=<PyOleEmpty object at 0x00000212284D5D40>, GroupByType=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Exports the strategy to a MatLab file
+ |
+ |  FindOrSearchDataItem(self, szDataItemName=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      This method searches for a given data item. Full or partial data item names are allowed (e.g. Var1 or Measurements.Var1)
+ |
+ |  FindOrSearchDataItem2(self, szDataItemName=<PyOleEmpty object at 0x00000212284D5D40>, CaseSensitiveSearch=True)
+ |      Searches for a given data item. Full or partial data item names are allowed (e.g. Var1 or Measurements.Var1), the search can be done either in case-sensitive or case-insensitive mode. Note that search in case-insensitive mode will take longer time.
+ |
+ |  GetBaseGroup(self, szIgnored=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Returns the base group for the strategy.  szIgnored parameter is not used
+ |
+ |  GetDeviceSetting(self, DeviceSettingName=<PyOleEmpty object at 0x00000212284D5D40>, index=<PyOleEmpty object at 0x00000212284D5D40>, Status=<PyOleMissing object at 0x00000212284D5A80>)
+ |      Returns the device setting from the parameter table of the strategy
+ |
+ |  GetDeviceSettingString(self, DeviceSettingName=<PyOleEmpty object at 0x00000212284D5D40>, Status=<PyOleMissing object at 0x00000212284D5A80>)
+ |      Returns the device setting string
+ |
+ |  GetNoHooksCalRegionInfo(self)
+ |      Returns the NoHooks Calibration Regions
+ |
+ |  Import(self, FileName=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Imports a file into a new or existing strategy. This method can import a file of the following types (*.hex, *.s19, *.bin, *.a2l, *.rob, *.ati, *.map, *.set, *.dbo, *.mao)
+ |
+ |  ImportAs(self, FileName=<PyOleEmpty object at 0x00000212284D5D40>, Type=-1)
+ |      Specifies the file type and imports it into a new or existing strategy. This method can import a file of the following types (*.hex, *.s19, *.bin, *.a2l, *.rob, *.ati, *.map, *.set, *.dbo, *.mao)
+ |
+ |  ImportCalibration(self, ImportFileName=<PyOleEmpty object at 0x00000212284D5D40>, ResizeAxis=False, IgnoreRangeLimits=False, FilterFileName='', ModificationSource='', ModificationFromDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), ModificationToDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0))
+ |      Imports a VISION calibration file (*.cal)
+ |
+ |  ImportCalibrationFromCDF(self, ImportFileName=<PyOleEmpty object at 0x00000212284D5D40>, ResizeAxis=False, IgnoreRangeLimits=False, IgnoreMissingStates=False, FilterFileName='', ModificationSource='', ModificationFromDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), ModificationToDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0))
+ |      Imports an ASAM CDF calibration file (*.cdf; *.cdfx)
+ |
+ |  ImportCalibrationFromDCM(self, ImportFileName=<PyOleEmpty object at 0x00000212284D5D40>, ResizeAxis=False, IgnoreRangeLimits=False, IgnoreMissingStates=False, FilterFileName='', ModificationSource='', ModificationFromDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), ModificationToDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0))
+ |      Imports a DCM calibration file (*.dcm)
+ |
+ |  ImportCalibrationFromMatlab(self, ImportFileName=<PyOleEmpty object at 0x00000212284D5D40>, FilterFileName='', ModificationSource='', ModificationFromDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), ModificationToDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0))
+ |      Imports a MATLAB calibration file (*.mat)
+ |
+ |  ImportCalibrationFromVAT2000(self, ImportFileName=<PyOleEmpty object at 0x00000212284D5D40>, ResizeAxis=False, IgnoreRangeLimits=False, IgnoreMissingStates=False, FilterFileName='', ModificationSource='', ModificationFromDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), ModificationToDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0))
+ |      Imports a VAT2000 calibration file (*.txt)
+ |
+ |  ImportCalibrationFromVector(self, ImportFileName=<PyOleEmpty object at 0x00000212284D5D40>, FilterFileName='', ModificationSource='', ModificationFromDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0), ModificationToDateTime=(1899, 12, 30, 0, 0, 0, 5, 364, 0))
+ |      Imports a Vector calibration file (*.vxf)
+ |
+ |  ImportResource(self, filePathToResource=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Import resource file from specified location
+ |
+ |  Open(self, StrategyFileName=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Opens a VISION strategy file
+ |
+ |  RemoveBitmapsFromStrategyResource(self)
+ |      Removes any bitmaps, EMFs, and/or SVGs in the strategy resource file
+ |
+ |  RemoveMemoryRegion(self, MemoryName=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Removes a memory region from the strategy
+ |
+ |  RemoveStrategySetting(self, DeviceSettingName=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Removes the device setting from the parameter table of the strategy
+ |
+ |  Save(self)
+ |      Saves the imported file
+ |
+ |  SaveAs(self, NewStrategyFilename=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Saves the imported file under a new name
+ |
+ |  SaveAsVersion(self, NewStrategyFilename=<PyOleEmpty object at 0x00000212284D5D40>, Version=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Saves the strategy file under a new name and specified version
+ |
+ |  SetASAP2ImportProperties(self, AllowBrackets=<PyOleEmpty object at 0x00000212284D5D40>, ClearDeviceSettings=<PyOleEmpty object at 0x00000212284D5D40>, DeleteExistingItems=<PyOleEmpty object at 0x00000212284D5D40>, ImportFunctions=<PyOleEmpty object at 0x00000212284D5D40>, ReplaceExistingItems=<PyOleEmpty object at 0x00000212284D5D40>, SwapAxes=<PyOleEmpty object at 0x00000212284D5D40>, UseDisplayIdentifiers=<PyOleEmpty object at 0x00000212284D5D40>, StructureNameOption=<PyOleEmpty object at 0x00000212284D5D40>, StrategyPreset=<PyOleEmpty object at 0x00000212284D5D40>, IgnoreMemoryRegions=False, UseExtendedLimits=False, OrganizeDataItemsInGroups=True, GroupSeparator='#')
+ |      Set the properties for an import of an ASAP2 Import
+ |
+ |  SetASAP2ImportProperties2(self, StrategyPreset=<PyOleEmpty object at 0x00000212284D5D40>, ImportFunctions=True, SwapAxes=False, IgnoreMemoryRegions=False, ExtendLimits=False, EnforceLimits=True, DeleteExistingItems=False, ReplaceExistingItems=False, ClearDeviceSettings=False, AllowBrackets=True, OrganizeDataItemInGroups=True, UseDisplayIdentifiers=False, StructureNameOption=2, GroupSeparator='#', CharacterSet=0)
+ |      Set the properties for an import of an ASAP2 Import
+ |
+ |  SetBinaryImportProperties(self, EnableLimits=<PyOleEmpty object at 0x00000212284D5D40>, StartLimit=<PyOleEmpty object at 0x00000212284D5D40>, EndLimit=<PyOleEmpty object at 0x00000212284D5D40>, LoadAddress=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Set the properties for an import of a binary file
+ |
+ |  SetCaterpillarImportProperties(self, StrategyPreset=<PyOleEmpty object at 0x00000212284D5D40>, DeleteExistingItems=True, ClearDeviceSettings=False, EnforceLimits=True, UseDescriptionAsItemNames=True, FlatList=True)
+ |      Set the properties for an import of Caterpillar file
+ |
+ |  SetDensoImportProperties(self, StrategyPreset=<PyOleEmpty object at 0x00000212284D5D40>, DeleteExistingItems=True, ClearDeviceSettings=False, EnforceLimits=True)
+ |      Set the properties for an import of Denso file
+ |
+ |  SetHexImportProperties(self, DisableRangeChecking=<PyOleEmpty object at 0x00000212284D5D40>, EnableLimits=<PyOleEmpty object at 0x00000212284D5D40>, StartLimit=<PyOleEmpty object at 0x00000212284D5D40>, EndLimit=<PyOleEmpty object at 0x00000212284D5D40>, Regions=<PyOleEmpty object at 0x00000212284D5D40>, CreateRegionsFromData=0)
+ |      Set the properties for an import of a hex record
+ |
+ |  SetHondaImportProperties(self, StrategyPreset=<PyOleEmpty object at 0x00000212284D5D40>, DeleteExistingItems=True, ClearDeviceSettings=False, EnforceLimits=True, CharacterSet=0)
+ |      Set the properties for an import of Honda file
+ |
+ |  SetROBImportProperties(self, AllowBrackets=<PyOleEmpty object at 0x00000212284D5D40>, ClearDeviceSettings=<PyOleEmpty object at 0x00000212284D5D40>, DeleteExistingItems=<PyOleEmpty object at 0x00000212284D5D40>, RemoveOverlappingScalars=<PyOleEmpty object at 0x00000212284D5D40>, ReplaceExistingItems=<PyOleEmpty object at 0x00000212284D5D40>, StrategyPreset=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Set the properties for an import of a ROB file
+ |
+ |  SetROBImportProperties2(self, StrategyPreset=<PyOleEmpty object at 0x00000212284D5D40>, DeleteExistingItems=True, ReplaceExistingItems=False, PromptIncompatibleFormulas=False, RemoveOverlappingScalars=True, AllowBrackets=True, EnforceLimits=True, ClearDeviceSettings=False, CharacterSet=0)
+ |      Set the properties for an import of a ROB file
+ |
+ |  SetSRecordImportProperties(self, DisableRangeChecking=<PyOleEmpty object at 0x00000212284D5D40>, EnableLimits=<PyOleEmpty object at 0x00000212284D5D40>, StartLimit=<PyOleEmpty object at 0x00000212284D5D40>, EndLimit=<PyOleEmpty object at 0x00000212284D5D40>, Regions=<PyOleEmpty object at 0x00000212284D5D40>, CreateRegionsFromData=0)
+ |      Set the properties for an import of an SRecord
+ |
+ |  SetStrategySetting(self, DeviceSettingName=<PyOleEmpty object at 0x00000212284D5D40>, Value=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Sets the device setting from the parameter table of the strategy
+ |
+ |  ShowSelectDataItemDialog(self, Types=<PyOleEmpty object at 0x00000212284D5D40>, MultipleSelection=True)
+ |      Ask the user for a data item
+ |
+ |  WriteToMemoryByteArray(self, AddressIn=<PyOleEmpty object at 0x00000212284D5D40>, nSize=<PyOleEmpty object at 0x00000212284D5D40>, pMem=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Puts a generic memory object into the strategy memory.
+ |
+ |  WriteToMemoryByteArray2(self, AddressIn=<PyOleEmpty object at 0x00000212284D5D40>, nSize=<PyOleEmpty object at 0x00000212284D5D40>, pMem=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Puts a generic memory object into the strategy memory.
+ |
+ |  WriteToMemoryString(self, AddressIn=<PyOleEmpty object at 0x00000212284D5D40>, String=<PyOleEmpty object at 0x00000212284D5D40>)
+ |      Puts a generic memory object into the strategy memory.
+ |
+ |  __iter__(self)
+ |      Return a Python iterator for this object
+ |
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |
+ |  CLSID = IID('{85A8F879-6377-4BF2-A70F-8EADB03FB663}')
+ |
+ |  coclass_clsid = IID('{5A0C649C-7E51-4862-88F4-E4FD493EF2D8}')
+ |
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from win32com.client.DispatchBaseClass:
+ |
+ |  __dir__(self)
+ |      Default dir() implementation.
+ |
+ |  __eq__(self, other)
+ |      Return self==value.
+ |
+ |  __getattr__(self, attr)
+ |
+ |  __init__(self, oobj=None)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |
+ |  __ne__(self, other)
+ |      Return self!=value.
+ |
+ |  __repr__(self)
+ |      Return repr(self).
+ |
+ |  __setattr__(self, attr, value)
+ |      Implement setattr(self, name, value).
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from win32com.client.DispatchBaseClass:
+ |
+ |  __dict__
+ |      dictionary for instance variables
+ |
+ |  __weakref__
+ |      list of weak references to the object
+ |
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes inherited from win32com.client.DispatchBaseClass:
+ |
+ |  __hash__ = None
+
+
+
+=== dir(strat) — all members ===
+AddDataItemGroupsToAsapFile
+AddMemoryRegion
+AddMemoryRegion2
+AddModelBitmapToStrategyResource
+BinaryImportAddress
+CLSID
+CopyStrategyMemory
+DeleteResource
+ExportASAP2DescriptionFile
+ExportAllMemory
+ExportCalibration
+ExportCalibrationToCDF
+ExportCalibrationToDCM
+ExportCalibrationToMatlab
+ExportCalibrationToVAT2000
+ExportCalibrationToVector
+ExportCustomHFiles
+ExportFilterFile
+ExportMemory
+ExportResource
+ExportToMatlabFile
+FileName
+FindOrSearchDataItem
+FindOrSearchDataItem2
+GetBaseGroup
+GetDeviceSetting
+GetDeviceSettingString
+GetNoHooksCalRegionInfo
+GroupDataItem
+Import
+ImportAs
+ImportCalibration
+ImportCalibrationFromCDF
+ImportCalibrationFromDCM
+ImportCalibrationFromMatlab
+ImportCalibrationFromVAT2000
+ImportCalibrationFromVector
+ImportResource
+Name
+Open
+RemoveBitmapsFromStrategyResource
+RemoveMemoryRegion
+RemoveStrategySetting
+ResourceNames
+Save
+SaveAs
+SaveAsVersion
+SetASAP2ImportProperties
+SetASAP2ImportProperties2
+SetBinaryImportProperties
+SetCaterpillarImportProperties
+SetDensoImportProperties
+SetHexImportProperties
+SetHondaImportProperties
+SetROBImportProperties
+SetROBImportProperties2
+SetSRecordImportProperties
+SetStrategySetting
+ShowSelectDataItemDialog
+StateTables
+StrategyInformation
+StrategyMemoryMap
+StrategySettings
+WriteToMemoryByteArray
+WriteToMemoryByteArray2
+WriteToMemoryString
+_ApplyTypes_
+__class__
+__delattr__
+__dict__
+__dir__
+__doc__
+__eq__
+__format__
+__ge__
+__getattr__
+__getattribute__
+__getstate__
+__gt__
+__hash__
+__init__
+__init_subclass__
+__iter__
+__le__
+__lt__
+__module__
+__ne__
+__new__
+__reduce__
+__reduce_ex__
+__repr__
+__setattr__
+__sizeof__
+__str__
+__subclasshook__
+__weakref__
+_get_good_object_
+_get_good_single_object_
+_oleobj_
+_prop_map_get_
+_prop_map_put_
+coclass_clsid
+
+
+=== _prop_map_get_ (readable properties) ===
+BinaryImportAddress: (1610743838, 2, (3, 0), (), 'BinaryImportAddress', None)
+FileName: (1610743836, 2, (8, 0), (), 'FileName', None)
+GroupDataItem: (1610743832, 2, (9, 0), (), 'GroupDataItem', '{F52AD775-A0A6-4C72-8195-01BC3D64F5F7}')
+Name: (1610743837, 2, (8, 0), (), 'Name', None)
+ResourceNames: (1610743853, 2, (8200, 0), (), 'ResourceNames', None)
+StateTables: (1610743873, 2, (9, 0), (), 'StateTables', '{7AB9C7D9-1183-428D-86A9-FF7900CCAAFD}')
+StrategyInformation: (1610743833, 2, (9, 0), (), 'StrategyInformation', '{B454D2C2-44B3-4B15-8AA4-242A0794665D}')
+StrategyMemoryMap: (1610743834, 2, (9, 0), (), 'StrategyMemoryMap', '{7AB9C7D9-1183-428D-86A9-FF7900CCAAFD}')
+StrategySettings: (1610743835, 2, (9, 0), (), 'StrategySettings', '{7AB9C7D9-1183-428D-86A9-FF7900CCAAFD}')
+
+
+=== _prop_map_put_ (writable properties) ===
+BinaryImportAddress: ((1610743838, 0, 4, 0), ())
