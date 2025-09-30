@@ -8,9 +8,13 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 A2L_PATH   = os.path.join(SCRIPT_DIR, "example.a2l")     # kendi .a2l dosyan
 VST_OUT    = os.path.join(SCRIPT_DIR, "out", "MyECU.vst")  # çıkış .vst
 CAL_OUT    = os.path.join(SCRIPT_DIR, "out", "MyECU.cal")  # çıkış .cal
-PRJ_OUT    = os.path.join(SCRIPT_DIR, "out", "MyECU.vpj")  # çıkış .cal
+PRJ_OUT    = os.path.join(SCRIPT_DIR, "out", "MyECU_emre44.vpj")  # çıkış .cal
 S19_PATH   = os.path.join(SCRIPT_DIR, "example.s19") #s19 dosyası.
 
+# Enum değerleri (dokümandaki VISION_DEVICE_TYPES)
+VISION_DEVICE_VIRTUALPCM = 36   # Virtual PCM
+VISION_DEVICE_APIPORT    = 37   # VISION API Port
+VISION_DEVICE_USBPORT    = 1
 def ensure_dir(p):
     d = os.path.dirname(p)
     if d and not os.path.exists(d):
@@ -90,9 +94,38 @@ def export_calib(strat, out_path):
     )
     return True
 
+
 def create_project(prj, PRJ_PATH):
-    prj.SaveAs(PRJ_PATH)
+    import os, time
+    # Kaydet & açık olduğundan emin ol
+    os.makedirs(os.path.dirname(PRJ_PATH), exist_ok=True)
+    rc = prj.SaveAs(PRJ_PATH)
+    # Proje açık değilse bir kez daha açmayı dene
+    if not prj.IsOpen:
+        prj.Open(PRJ_PATH)
+
+    if not prj.IsOpen:
+        raise RuntimeError("Project not open after SaveAs/Open")
+
+    # ---- Device ağacı: Computer (RootDevice) -> USB Port -> (auto) VID ----
+    root = prj.RootDevice  # Bilgisayar düğümü (device tree kökü) :contentReference[oaicite:1]{index=1}
+
+    VISION_DEVICE_USBPORT = 1   # USB Port device :contentReference[oaicite:2]{index=2}
+    VISION_DEVICE_VID     = 96  # VID device (CANary) :contentReference[oaicite:3]{index=3}
+
+    # 1) USB Port ekle
+    usb = root.AddDevice(VISION_DEVICE_USBPORT)
+    usb.QueryForSubDevices()
+    can1 = prj.FindDevice("CANChannel1")
+    can1.AddDevice(13)
+    # 2) USB altını tarat (auto-detect)
+    #    Birkaç kez dene; sürücü/Windows enumerasyonu küçük gecikmeli olabilir.
+    
+
     return True
+
+
+
 
 
 def main():
@@ -105,15 +138,15 @@ def main():
     pythoncom.CoInitialize()
     try:
         # Doğrudan StrategyFileInterface'e bağlan
-        strat = win32com.client.gencache.EnsureDispatch("Vision.StrategyFileInterface")
+        strat = win32com.client.DispatchEx("Vision.StrategyFileInterface")
         print("✅ StrategyFileInterface bağlı.")
 
         prj = win32com.client.gencache.EnsureDispatch("Vision.ProjectInterface")
-        print("✅ ProjectInterface bağlı.")
 
+            # 2) Cihazları ekle: önce API Port, sonra Virtual PCM
+        #root.AddDevice(VISION_DEVICE_USBPORT)     # :contentReference[oaicite:8]{index=8}
+        #root.AddDevice(VISION_DEVICE_VIRTUALPCM)  # :contentReference[oaicite:9]{index=9}
 
-        if not create_project(prj,PRJ_OUT):
-            raise RuntimeError("A2L import edilemedi (Import başarisiz).")
         # (İsteğe bağlı) ASAP2 import ayarları — çoğu durumda gerekmez, varsayılanlar kullanılır
         # Örn. eğer sende bu metotlar varsa ve kullanmak istersen:
         # if hasattr(strat, "SetASAP2ImportProperties2"):
@@ -135,6 +168,8 @@ def main():
         if not export_calib(strat, CAL_OUT):
             raise RuntimeError("VST kaydedilemedi (SaveAs/Save başarisiz).")
         
+        create_project(prj, PRJ_OUT)
+
         print(f"✅ Bitti.\n VST: {VST_OUT}")
     finally:
         pythoncom.CoUninitialize()
