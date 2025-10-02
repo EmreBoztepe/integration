@@ -39,7 +39,7 @@ ASAP2_VERSION  1 6
             DEVICE_SETTING    "XcpSegment2Config=Code02,0,1,0,0" 
 
             DEVICE_SETTING    "XcpCanIfProtocolOptionalCmds=12,0xf8,0xf7,0xf6,0xf5,0xf3,0xda,0xd9,0xd8,0xd7,0xd0,0xd1,0xd2"
-            DEVICE_SETTING    "XcpCanIfConfig=1000000,75,1,9,1,1"
+            DEVICE_SETTING    "XcpCanIfConfig=1000000,75,1,5,2,1"
             DEVICE_SETTING    "XcpSegment3Page1=0,3,3,3,0"
             DEVICE_SETTING    "GroupSeparator=#"
 
