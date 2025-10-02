@@ -95,7 +95,7 @@ def export_calib(strat, out_path):
     return True
 
 
-def create_project(prj, PRJ_PATH):
+def create_project(prj, PRJ_PATH,vst):
     import os, time
     # Kaydet & açık olduğundan emin ol
     os.makedirs(os.path.dirname(PRJ_PATH), exist_ok=True)
@@ -109,7 +109,7 @@ def create_project(prj, PRJ_PATH):
 
     # ---- Device ağacı: Computer (RootDevice) -> USB Port -> (auto) VID ----
     root = prj.RootDevice  # Bilgisayar düğümü (device tree kökü) :contentReference[oaicite:1]{index=1}
-
+    #dump_tree(root)
     VISION_DEVICE_USBPORT = 1   # USB Port device :contentReference[oaicite:2]{index=2}
     VISION_DEVICE_VID     = 96  # VID device (CANary) :contentReference[oaicite:3]{index=3}
 
@@ -117,7 +117,10 @@ def create_project(prj, PRJ_PATH):
     usb = root.AddDevice(VISION_DEVICE_USBPORT)
     usb.QueryForSubDevices()
     can1 = prj.FindDevice("CANChannel1")
-    can1.AddDevice(13)
+
+    can1.AddDevice(60)
+    pcm = prj.FindDevice("PCM")
+    pcm.AddStrategy(vst)
     # 2) USB altını tarat (auto-detect)
     #    Birkaç kez dene; sürücü/Windows enumerasyonu küçük gecikmeli olabilir.
     
@@ -168,7 +171,7 @@ def main():
         if not export_calib(strat, CAL_OUT):
             raise RuntimeError("VST kaydedilemedi (SaveAs/Save başarisiz).")
         
-        create_project(prj, PRJ_OUT)
+        create_project(prj, PRJ_OUT,strat)
 
         print(f"✅ Bitti.\n VST: {VST_OUT}")
     finally:
