@@ -215,12 +215,14 @@ def main():
             raise RuntimeError("VST kaydedilemedi (SaveAs/Save başarisiz).")
 
         if not export_calib(strat, CAL_OUT):
-            raise RuntimeError("VST kaydedilemedi (SaveAs/Save başarisiz).")
+           raise RuntimeError("VST kaydedilemedi (SaveAs/Save başarisiz).")
         
         open_base_project(prj,PRJ_OUT)
 
         pcm = prj.FindDevice("PCM")
         pcm.AddStrategy(strat)
+        pcm.EnableAutoDownload = False
+        pcm.DisableAutoSync = True
         prj.Online = True
         time.sleep(0.2)
 
