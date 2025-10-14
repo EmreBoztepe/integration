@@ -1964,7 +1964,7 @@ ASAP2_VERSION  1 6
             /* Name               */    CCVS1_J1939_Src_Adr
             /* Long Identifier    */    "CCVS1 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[0].sa@ */
+            /* Address            */    0x4000B060    /* @ECU_Address@j1939_handle_entry[0].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -1978,7 +1978,7 @@ ASAP2_VERSION  1 6
             /* Name               */    CM1_J1939_Src_Adr
             /* Long Identifier    */    "CM1 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[1].sa@ */
+            /* Address            */    0x4000B07C    /* @ECU_Address@j1939_handle_entry[1].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -1992,7 +1992,7 @@ ASAP2_VERSION  1 6
             /* Name               */    CM3_J1939_Src_Adr
             /* Long Identifier    */    "CM3 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[2].sa@ */
+            /* Address            */    0x4000B098    /* @ECU_Address@j1939_handle_entry[2].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2006,7 +2006,7 @@ ASAP2_VERSION  1 6
             /* Name               */    CTL_J1939_Src_Adr
             /* Long Identifier    */    "CTL Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[3].sa@ */
+            /* Address            */    0x4000B0B4    /* @ECU_Address@j1939_handle_entry[3].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2020,7 +2020,7 @@ ASAP2_VERSION  1 6
             /* Name               */    DLCC1COC_J1939_Src_Adr
             /* Long Identifier    */    "DLCC1COC Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[4].sa@ */
+            /* Address            */    0x4000B0D0    /* @ECU_Address@j1939_handle_entry[4].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2034,7 +2034,7 @@ ASAP2_VERSION  1 6
             /* Name               */    EBC1_J1939_Src_Adr
             /* Long Identifier    */    "EBC1 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[5].sa@ */
+            /* Address            */    0x4000B0EC    /* @ECU_Address@j1939_handle_entry[5].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2048,7 +2048,7 @@ ASAP2_VERSION  1 6
             /* Name               */    ETC7_J1939_Src_Adr
             /* Long Identifier    */    "ETC7 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[6].sa@ */
+            /* Address            */    0x4000B108    /* @ECU_Address@j1939_handle_entry[6].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2062,7 +2062,7 @@ ASAP2_VERSION  1 6
             /* Name               */    EEC3_RX_J1939_Src_Adr
             /* Long Identifier    */    "EEC3_RX Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[7].sa@ */
+            /* Address            */    0x4000B124    /* @ECU_Address@j1939_handle_entry[7].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2076,7 +2076,7 @@ ASAP2_VERSION  1 6
             /* Name               */    ERC1_RX_J1939_Src_Adr
             /* Long Identifier    */    "ERC1_RX Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[8].sa@ */
+            /* Address            */    0x4000B140    /* @ECU_Address@j1939_handle_entry[8].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2090,7 +2090,7 @@ ASAP2_VERSION  1 6
             /* Name               */    ETC1_J1939_Src_Adr
             /* Long Identifier    */    "ETC1 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[9].sa@ */
+            /* Address            */    0x4000B15C    /* @ECU_Address@j1939_handle_entry[9].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2104,7 +2104,7 @@ ASAP2_VERSION  1 6
             /* Name               */    ETC2_J1939_Src_Adr
             /* Long Identifier    */    "ETC2 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[10].sa@ */
+            /* Address            */    0x4000B178    /* @ECU_Address@j1939_handle_entry[10].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2118,7 +2118,7 @@ ASAP2_VERSION  1 6
             /* Name               */    ETC8_J1939_Src_Adr
             /* Long Identifier    */    "ETC8 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[11].sa@ */
+            /* Address            */    0x4000B194    /* @ECU_Address@j1939_handle_entry[11].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2132,7 +2132,7 @@ ASAP2_VERSION  1 6
             /* Name               */    FD1_J1939_Src_Adr
             /* Long Identifier    */    "FD1 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[12].sa@ */
+            /* Address            */    0x4000B1B0    /* @ECU_Address@j1939_handle_entry[12].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2146,7 +2146,7 @@ ASAP2_VERSION  1 6
             /* Name               */    IDFF33_J1939_Src_Adr
             /* Long Identifier    */    "IDFF33 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[13].sa@ */
+            /* Address            */    0x4000B1CC    /* @ECU_Address@j1939_handle_entry[13].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2160,7 +2160,7 @@ ASAP2_VERSION  1 6
             /* Name               */    M2E46_J1939_Src_Adr
             /* Long Identifier    */    "M2E46 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[14].sa@ */
+            /* Address            */    0x4000B1E8    /* @ECU_Address@j1939_handle_entry[14].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2174,7 +2174,7 @@ ASAP2_VERSION  1 6
             /* Name               */    M2E47_J1939_Src_Adr
             /* Long Identifier    */    "M2E47 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[15].sa@ */
+            /* Address            */    0x4000B204    /* @ECU_Address@j1939_handle_entry[15].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2188,7 +2188,7 @@ ASAP2_VERSION  1 6
             /* Name               */    M2E48_J1939_Src_Adr
             /* Long Identifier    */    "M2E48 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[16].sa@ */
+            /* Address            */    0x4000B220    /* @ECU_Address@j1939_handle_entry[16].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2202,7 +2202,7 @@ ASAP2_VERSION  1 6
             /* Name               */    M2E49_J1939_Src_Adr
             /* Long Identifier    */    "M2E49 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[17].sa@ */
+            /* Address            */    0x4000B23C    /* @ECU_Address@j1939_handle_entry[17].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2216,7 +2216,7 @@ ASAP2_VERSION  1 6
             /* Name               */    PropVehT_J1939_Src_Adr
             /* Long Identifier    */    "PropVehT Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[18].sa@ */
+            /* Address            */    0x4000B258    /* @ECU_Address@j1939_handle_entry[18].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2230,7 +2230,7 @@ ASAP2_VERSION  1 6
             /* Name               */    TCI_J1939_Src_Adr
             /* Long Identifier    */    "TCI Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[19].sa@ */
+            /* Address            */    0x4000B274    /* @ECU_Address@j1939_handle_entry[19].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2244,7 +2244,7 @@ ASAP2_VERSION  1 6
             /* Name               */    TD_J1939_Src_Adr
             /* Long Identifier    */    "TD Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[20].sa@ */
+            /* Address            */    0x4000B290    /* @ECU_Address@j1939_handle_entry[20].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD
@@ -2258,7 +2258,7 @@ ASAP2_VERSION  1 6
             /* Name               */    TSC1_J1939_Src_Adr
             /* Long Identifier    */    "TSC1 Source Address"
             /* Type               */    VALUE
-            /* Address            */    0x0000    /* @ECU_Address@j1939_handle_entry[21].sa@ */
+            /* Address            */    0x4000B2AC    /* @ECU_Address@j1939_handle_entry[21].sa@ */
             /* Deposit            */    UBYTE
             /* Max diff           */    255
             /* Conversion Method  */    NO_COMPU_METHOD

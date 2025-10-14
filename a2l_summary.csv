@@ -82,6 +82,28 @@ gfCamAngle,RESOLVED,0x40010964 (gfCamAngle),DIRECT
 gusTPUFirstToothAngle,RESOLVED,0x40010996 (gusTPUFirstToothAngle),DIRECT
 gfInjectionDurationLowLimit,RESOLVED,0x40040018 (gfInjectionDurationLowLimit),DIRECT
 gfInjectionDurationUnderLowLimit,RESOLVED,0x40040014 (gfInjectionDurationUnderLowLimit),DIRECT
+j1939_handle_entry[0].sa,RESOLVED,0x4000B060 (j1939_handle_entry[0]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[1].sa,RESOLVED,0x4000B07C (j1939_handle_entry[1]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[2].sa,RESOLVED,0x4000B098 (j1939_handle_entry[2]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[3].sa,RESOLVED,0x4000B0B4 (j1939_handle_entry[3]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[4].sa,RESOLVED,0x4000B0D0 (j1939_handle_entry[4]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[5].sa,RESOLVED,0x4000B0EC (j1939_handle_entry[5]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[6].sa,RESOLVED,0x4000B108 (j1939_handle_entry[6]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[7].sa,RESOLVED,0x4000B124 (j1939_handle_entry[7]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[8].sa,RESOLVED,0x4000B140 (j1939_handle_entry[8]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[9].sa,RESOLVED,0x4000B15C (j1939_handle_entry[9]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[10].sa,RESOLVED,0x4000B178 (j1939_handle_entry[10]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[11].sa,RESOLVED,0x4000B194 (j1939_handle_entry[11]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[12].sa,RESOLVED,0x4000B1B0 (j1939_handle_entry[12]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[13].sa,RESOLVED,0x4000B1CC (j1939_handle_entry[13]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[14].sa,RESOLVED,0x4000B1E8 (j1939_handle_entry[14]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[15].sa,RESOLVED,0x4000B204 (j1939_handle_entry[15]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[16].sa,RESOLVED,0x4000B220 (j1939_handle_entry[16]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[17].sa,RESOLVED,0x4000B23C (j1939_handle_entry[17]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[18].sa,RESOLVED,0x4000B258 (j1939_handle_entry[18]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[19].sa,RESOLVED,0x4000B274 (j1939_handle_entry[19]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[20].sa,RESOLVED,0x4000B290 (j1939_handle_entry[20]+DWARF(8)),STRUCT_MEMBER
+j1939_handle_entry[21].sa,RESOLVED,0x4000B2AC (j1939_handle_entry[21]+DWARF(8)),STRUCT_MEMBER
 DTqC_MaxTqAtCurrentEngSpd_M,RESOLVED,0x40041C84 (mtlb_DTqC_MaxTqAtCurrentEngSpd_M),DIRECT
 DTqC_MaxTqNEng_A,RESOLVED,0x40041CB4 (mtlb_DTqC_MaxTqNEng_A),DIRECT
 DTqC_TqFric_M,RESOLVED,0x400433AC (mtlb_DTqC_TqFric_M),DIRECT
@@ -3526,68 +3548,46 @@ CrsCtrl_bEngBrkLvl2Ena,RESOLVED,0x4000D920 (CrsCtrl_bEngBrkLvl2Ena),DIRECT
 CrsCtrl_bEngBrkLvl1Ena,RESOLVED,0x4000E1C4 (CrsCtrl_bEngBrkLvl1Ena),DIRECT
 CrsCtrl_ErrCanTrtCaseSts,RESOLVED,0x4000E54B (CrsCtrl_ErrCanTrtCaseSts),DIRECT
 CrsCtrl_ErrCanTrsmTqCnvrRat,RESOLVED,0x4000DEDA (CrsCtrl_ErrCanTrsmTqCnvrRat),DIRECT
-PAmbAir_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-PRail_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-POil_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-PFu_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-PAirBoost_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-LvlOil_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-AccrPedl1_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-AccrPedl2_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-TEcu_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-TOil_RawValR,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-TCoolt_RawValR,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-TAirBoost_RawValR,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-TAmbAir_RawValR,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-TFu_RawValR,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-TOil_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-TCoolt_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-TAirBoost_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-TAmbAir_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-TFu_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V48_Boost_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-Batt_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V12_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V5_Ref_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V5_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V3_3_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V1_25_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V12_Ref_Cam_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V12_Ref_Crk_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-NTC_1_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-NTC_2_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-NTC_3_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-NTC_4_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-DO6_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-DO7_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-DO8_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-DO9_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V12_Ref_Cam_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V12_Ref_Crk_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V5_Ref_MCU_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V5_Ref_1_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-V5_Ref_2_Diag_RawValU,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-Fb_IRefVCV,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-Fb_IRefPCV,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[0].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[1].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[2].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[3].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[4].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[5].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[6].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[7].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[8].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[9].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[10].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[11].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[12].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[13].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[14].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[15].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[16].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[17].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[18].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[19].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[20].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
-j1939_handle_entry[21].sa,MISSING,symbol not found (needs DWARF for struct members or missing symbol),
+PAmbAir_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+PRail_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+POil_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+PFu_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+PAirBoost_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+LvlOil_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+AccrPedl1_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+AccrPedl2_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+TEcu_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+TOil_RawValR,MISSING,symbol not found (needs DWARF or missing symbol),
+TCoolt_RawValR,MISSING,symbol not found (needs DWARF or missing symbol),
+TAirBoost_RawValR,MISSING,symbol not found (needs DWARF or missing symbol),
+TAmbAir_RawValR,MISSING,symbol not found (needs DWARF or missing symbol),
+TFu_RawValR,MISSING,symbol not found (needs DWARF or missing symbol),
+TOil_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+TCoolt_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+TAirBoost_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+TAmbAir_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+TFu_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V48_Boost_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+Batt_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V12_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V5_Ref_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V5_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V3_3_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V1_25_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V12_Ref_Cam_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V12_Ref_Crk_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+NTC_1_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+NTC_2_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+NTC_3_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+NTC_4_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+DO6_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+DO7_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+DO8_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+DO9_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V12_Ref_Cam_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V12_Ref_Crk_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V5_Ref_MCU_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V5_Ref_1_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+V5_Ref_2_Diag_RawValU,MISSING,symbol not found (needs DWARF or missing symbol),
+Fb_IRefVCV,MISSING,symbol not found (needs DWARF or missing symbol),
+Fb_IRefPCV,MISSING,symbol not found (needs DWARF or missing symbol),
