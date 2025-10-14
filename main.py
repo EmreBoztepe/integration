@@ -11,7 +11,9 @@ VST_OUT    = os.path.join(SCRIPT_DIR, "out", "MyECU.vst")  # çıkış .vst
 CAL_OUT    = os.path.join(SCRIPT_DIR, "out", "MyECU.cal")  # çıkış .cal
 PRJ_OUT    = os.path.join(SCRIPT_DIR, "base", "base.vpj")  # çıkış .cal
 S19_PATH   = os.path.join(SCRIPT_DIR, "example.s19") #s19 dosyası.
-
+OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out")
+os.makedirs(OUT_DIR, exist_ok=True)
+UPLOADED_VST = os.path.join(OUT_DIR, "MyECU.vst")
 # Enum değerleri (dokümandaki VISION_DEVICE_TYPES)
 VISION_DEVICE_VIRTUALPCM = 36   # Virtual PCM
 VISION_DEVICE_APIPORT    = 37   # VISION API Port
@@ -159,23 +161,17 @@ def create_project(prj, PRJ_PATH,vst):
 
     open_device_properties_with_logs(can1)
 
-   
-
     can1.AddDevice(60)
     pcm = prj.FindDevice("PCM")
     pcm.AddStrategy(vst)
 
-    
-
     return True
-
 
 def open_base_project(prj, PRJ_PATH):
 
 
     prj.Open(PRJ_PATH)
     
-
 
 def main():
     if not os.path.exists(A2L_PATH):
@@ -191,6 +187,12 @@ def main():
         print("✅ StrategyFileInterface bağlı.")
 
         prj = win32com.client.gencache.EnsureDispatch("Vision.ProjectInterface")
+
+        print("✅ ProjectInterface bağlı.")
+
+        #calib = win32com.client.gencache.EnsureDispatch("Vision.CalibrationInterface")
+
+        print("✅ DeviceInterface bağlı.")
         
             # 2) Cihazları ekle: önce API Port, sonra Virtual PCM
         #root.AddDevice(VISION_DEVICE_USBPORT)     # :contentReference[oaicite:8]{index=8}
@@ -221,12 +223,31 @@ def main():
 
         pcm = prj.FindDevice("PCM")
         pcm.AddStrategy(strat)
+        
         pcm.EnableAutoDownload = False
         pcm.DisableAutoSync = True
         prj.Online = True
-        time.sleep(0.2)
+        
+        time.sleep(4)
+        vst_path = os.path.abspath(VST_OUT)
+        pcm.UploadActiveStrategy(vst_path)
+        breakCount = 0
+        
+        while True:
+            state = pcm.State  # VISION_DEVICE_STATE_CODES
+            if state == 9:  # VISION_DEVICE_UPLOADING
+                print("Upload devam ediyor...")
+            elif state == 5:  # VISION_DEVICE_ONLINE
+                print("Upload tamamlandı.")
+                break
+            else:
+                print(f"Durum: {state}")
+                breakCount+=1
+                if breakCount == 5:
+                    break
+            time.sleep(1)
 
-
+        save_vst(strat, VST_OUT)
         #create_project(prj, PRJ_OUT,strat)
 
 
