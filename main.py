@@ -155,12 +155,23 @@ def main():
                 if breakCount == 5:
                     break
 
-        time.sleep(5)
+        
         strategy = pcm.ActiveStrategy
-        cal = strategy.ActiveCalibration
-        rc = strategy.ActiveCalibrationSaveAs("deneme")
+        strategy.ActiveCalibration = "[BASE CALIBRATION]"
+
+        vst_dir  = os.path.dirname(strategy.FileName)      # :contentReference[oaicite:6]{index=6}
+        vst_name = os.path.splitext(os.path.basename(strategy.FileName))[0]
+        cal_path = os.path.join(vst_dir, f"{vst_name}.cal")
+
+        cal_path = os.path.join(vst_dir, f"{vst_name}.cal")
+
+
+        # 3) SaveAs (çalışan kalibrasyonu yeni isimle kaydet)
+        rc = strategy.ActiveCalibrationSaveAs(cal_path)     # :contentReference[oaicite:7]{index=7}
+        print("ActiveCalibrationSaveAs rc =", rc)
 
         save_vst(strat, VST_OUT)
+        #prj.Save()
 
         print(f"✅ Bitti.\n VST: {VST_OUT}")
     finally:
