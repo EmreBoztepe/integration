@@ -14,10 +14,7 @@ S19_PATH   = os.path.join(SCRIPT_DIR, "example.s19") #s19 dosyası.
 OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out")
 os.makedirs(OUT_DIR, exist_ok=True)
 UPLOADED_VST = os.path.join(OUT_DIR, "MyECU.vst")
-# Enum değerleri (dokümandaki VISION_DEVICE_TYPES)
-VISION_DEVICE_VIRTUALPCM = 36   # Virtual PCM
-VISION_DEVICE_APIPORT    = 37   # VISION API Port
-VISION_DEVICE_USBPORT    = 1
+
 def ensure_dir(p):
     d = os.path.dirname(p)
     if d and not os.path.exists(d):
@@ -97,79 +94,7 @@ def export_calib(strat, out_path):
     )
     return True
 
-def open_device_properties_with_logs(dev):
-    import time, win32com.client
-
-    app = win32com.client.gencache.EnsureDispatch("Vision.Application")
-    # 1) Pencerenin görünmesini garanti et
-    try:
-        print("Before -> Visible:", getattr(app, "Visible", None),
-              "FullyAutomatedMode:", getattr(app, "FullyAutomatedMode", None))
-        app.Visible = True                 # UI görünür olsun
-        app.FullyAutomatedMode = False     # dialog bastırmayı KAPAT
-        print("After  -> Visible:", app.Visible, "FullyAutomatedMode:", app.FullyAutomatedMode)
-    except Exception as e:
-        print("App visibility/automation ayarlanamadı:", e)
-
-    # 2) (İsteğe bağlı) bu cihazı ‘current’ yap
-    try:
-        dev.SetCurrentDevice(dev)
-        print("SetCurrentDevice OK")
-    except Exception as e:
-        print("SetCurrentDevice yok/başarısız:", e)
-
-    # 3) Cihaz temel bilgilerini yazdır
-    try:
-        props = dev.Properties   # özelliktir, çağırılmaz
-        print("Device:", props.Name, "| Enabled:", props.Enabled, "| Comments:", props.Comments)
-    except Exception as e:
-        print("Properties okunamadı:", e)
-
-    # 4) Diyaloğu aç (non-blocking)
-    print("EditProperties çağrılıyor…")
-    dev.EditProperties()
-    try:
-        app.BringToFront()  # bazen arka planda açılır
-    except Exception:
-        pass
-    time.sleep(0.5)         # kullanıcı görebilsin diye ufak bekleme
-    print("EditProperties çağrısı döndü (pencere modal ama çağrı parametresiz ve geri değer yok).")
-
-
-def create_project(prj, PRJ_PATH,vst):
-    import os, time
-    # Kaydet & açık olduğundan emin ol
-    os.makedirs(os.path.dirname(PRJ_PATH), exist_ok=True)
-    rc = prj.SaveAs(PRJ_PATH)
-    # Proje açık değilse bir kez daha açmayı dene
-    if not prj.IsOpen:
-        prj.Open(PRJ_PATH)
-
-    if not prj.IsOpen:
-        raise RuntimeError("Project not open after SaveAs/Open")
-
-    # ---- Device ağacı: Computer (RootDevice) -> USB Port -> (auto) VID ----
-    root = prj.RootDevice  # Bilgisayar düğümü (device tree kökü) :contentReference[oaicite:1]{index=1}
-    #dump_tree(root)
-    VISION_DEVICE_USBPORT = 1   # USB Port device :contentReference[oaicite:2]{index=2}
-    VISION_DEVICE_VID     = 96  # VID device (CANary) :contentReference[oaicite:3]{index=3}
-
-    # 1) USB Port ekle
-    usb = root.AddDevice(VISION_DEVICE_USBPORT)
-    usb.QueryForSubDevices()
-    can1 = prj.FindDevice("CANChannel1")
-
-    open_device_properties_with_logs(can1)
-
-    can1.AddDevice(60)
-    pcm = prj.FindDevice("PCM")
-    pcm.AddStrategy(vst)
-
-    return True
-
 def open_base_project(prj, PRJ_PATH):
-
-
     prj.Open(PRJ_PATH)
     
 
@@ -187,24 +112,11 @@ def main():
         print("✅ StrategyFileInterface bağlı.")
 
         prj = win32com.client.gencache.EnsureDispatch("Vision.ProjectInterface")
-
         print("✅ ProjectInterface bağlı.")
-
-        #calib = win32com.client.gencache.EnsureDispatch("Vision.CalibrationInterface")
-
-        print("✅ DeviceInterface bağlı.")
         
-            # 2) Cihazları ekle: önce API Port, sonra Virtual PCM
-        #root.AddDevice(VISION_DEVICE_USBPORT)     # :contentReference[oaicite:8]{index=8}
-        #root.AddDevice(VISION_DEVICE_VIRTUALPCM)  # :contentReference[oaicite:9]{index=9}
-
-        # (İsteğe bağlı) ASAP2 import ayarları — çoğu durumda gerekmez, varsayılanlar kullanılır
-        # Örn. eğer sende bu metotlar varsa ve kullanmak istersen:
-        # if hasattr(strat, "SetASAP2ImportProperties2"):
-        #     # parametre imzasını bilmiyorsan dokunma; defaults gayet çalışır.
-        #     pass
-
-        # A2L içe aktar
+        ######
+        #generate adreslenmiş a2l
+        #####
 
         if not import_a2l(strat, A2L_PATH):
             raise RuntimeError("A2L import edilemedi (Import başarisiz).")
@@ -215,9 +127,6 @@ def main():
         # VST kaydet
         if not save_vst(strat, VST_OUT):
             raise RuntimeError("VST kaydedilemedi (SaveAs/Save başarisiz).")
-
-        if not export_calib(strat, CAL_OUT):
-           raise RuntimeError("VST kaydedilemedi (SaveAs/Save başarisiz).")
         
         open_base_project(prj,PRJ_OUT)
 
@@ -228,7 +137,7 @@ def main():
         pcm.DisableAutoSync = True
         prj.Online = True
         
-        time.sleep(4)
+        time.sleep(1)
         vst_path = os.path.abspath(VST_OUT)
         pcm.UploadActiveStrategy(vst_path)
         breakCount = 0
@@ -238,18 +147,20 @@ def main():
             if state == 9:  # VISION_DEVICE_UPLOADING
                 print("Upload devam ediyor...")
             elif state == 5:  # VISION_DEVICE_ONLINE
-                print("Upload tamamlandı.")
+                print("✅ Upload tamamlandı.")
                 break
             else:
                 print(f"Durum: {state}")
                 breakCount+=1
                 if breakCount == 5:
                     break
-            time.sleep(1)
+
+        time.sleep(5)
+        strategy = pcm.ActiveStrategy
+        cal = strategy.ActiveCalibration
+        rc = strategy.ActiveCalibrationSaveAs("deneme")
 
         save_vst(strat, VST_OUT)
-        #create_project(prj, PRJ_OUT,strat)
-
 
         print(f"✅ Bitti.\n VST: {VST_OUT}")
     finally:
